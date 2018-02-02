@@ -1,12 +1,12 @@
 {
-  "name": "wdi-project3",
-  "description": "",
+  "name": "wdi group project",
+  "description": "wdi group project",
   "main": "index.js",
   "authors": [
-    "Konstantinos <kgiantsios@gmail.com>"
+    "Put group member names here"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/kgiant/wdi-project3",
+  "license": "ISC",
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -15,16 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.6.8",
-    "angular-ui-router": "^1.0.14",
-    "angular-messages": "^1.6.8",
-    "angular-resource": "^1.6.8",
-    "bootstrap-css-only": "^4.0.0",
-    "angular-bootstrap": "^2.5.0",
-    "angular-animate": "^1.6.8",
-    "satellizer": "^0.15.5"
-  },
-  "resolutions": {
-    "angular": "^1.6.8"
+    "angular": "^1.4.8"
   }
 }
