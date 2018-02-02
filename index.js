@@ -14,7 +14,7 @@ const routes          = require('./config/routes');
 const dest = `${__dirname}/public`;
 
 mongoose.Promise = bluebird;
-mongoose.connect(db[env]);
+mongoose.connect(db[env]); ///change to mongoose if use old setup
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
