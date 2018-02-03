@@ -1,21 +1,21 @@
-const Industry = require('../models/industry');
+const Coin = require('../models/coin');
 
 function indexRoute(req, res, next){ //need to adapt for api
-  Industry
+  Coin
     .find()
     .exec()
-    .then((industry) => res.json(industry))
+    .then((coins) => res.json(coins))
     .catch(next);
 }
 
 function showRoute(req, res, next) {
-  Industry
+  Coin
     .findById(req.params.id)
     .exec()
-    .then((industry) => {
-      if(!industry) return res.notFound();
+    .then((coin) => {
+      if(!coin) return res.notFound();
 
-      res.json(industry);
+      res.json(coin);
     })
     .catch(next);
 }

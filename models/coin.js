@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// review this for cryptocompare api
 const coinSchema = new mongoose.Schema({
   altCap: String,
   bitnodesCount: String,
