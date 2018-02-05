@@ -2,6 +2,7 @@
 // <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series">
 // </canvas>
 
+//replace 'app' with 'coinApp'?
 angular.module('app', ['chart.js']).controller('BarCtrl', function ($scope) {
   $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
   $scope.series = ['Series A', 'Series B'];

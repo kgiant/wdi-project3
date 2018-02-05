@@ -14,7 +14,7 @@ router.route('/coins')
 router.route('/coins/:coinId')
   .get(coins.show); //secureRoute
 
-router.route('/register') 
+router.route('/register')
   .post(auth.register);
 
 router.route('/login')
@@ -32,6 +32,7 @@ router.route('/login')
 //
 // router.route('/posts/:postId')
 //   .get(posts.show)  //secureRoute
+//   .get(posts.edit) //secureRoute
 //   .put(posts.update) //secureRoute
 //   .delete(posts.delete); //secureRoute
 

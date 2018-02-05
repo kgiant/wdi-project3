@@ -9,7 +9,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'js/views/static/home.html'
+      templateUrl: 'js/views/static/home.html' // does not exist
     })
     .state('coinsIndex', {
       url: '/coins',

@@ -3,7 +3,9 @@ const bcrypt   = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
   organization: String,
+  status: String,
   name: String,
+  image: String, //use filestack here
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true }
 });
