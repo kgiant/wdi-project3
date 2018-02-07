@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const coinhistorySchema = new mongoose.Schema({
-  market_cap: [ { date: String,  dayCap: String } ] ,
-  price: [ { date: String,  dayPrice: String } ],
-  volume: [ { date: String,  dayVolume: String } ]
+  market_cap: [ { date: Number,  dayCap: Number } ] ,
+  price: [ { date: Number,  dayPrice: Number } ],
+  volume: [ { date: Number,  dayVolume: Number } ]
 });
 //unix time and USD values
 

@@ -4,19 +4,19 @@
       <div class="columns">
         <div class="column is-half is-offset-one-quarter">
           <form ng-submit="vm.submit()">
-            <div class="field">
+            <div class="form-group">
               <label class="label" for="email">Email</label>
               <p class="control">
-                <input class="input" type="text" name="email" id="email" ng-model="vm.credentials.email">
+                <input class="form-control-file" type="text" name="email" id="email" ng-model="vm.credentials.email">
               </p>
             </div>
-            <div class="field">
+            <div class="form-group">
               <label class="label" for="password">Password</label>
               <p class="control">
-                <input class="input" type="password" name="password" id="password" ng-model="vm.credentials.password">
+                <input class="form-control-file" type="password" name="password" id="password" ng-model="vm.credentials.password">
               </p>
             </div>
-            <div class="field">
+            <div class="form-group">
               <p class="control">
                 <input type="submit" class="button is-primary is-fullwidth" value="Login">
               </p>

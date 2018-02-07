@@ -1,0 +1,23 @@
+// this si for a card in /posts
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <img class="mr-3" src="{{ post.image }}" alt="image" width="286" height="180">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p class="card-text">{{ post.article }}</p>
+    <a ui-sref="postsShow({ id: post.id })">Read more</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+//this is for a news plug in in various pages
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Latest News
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" ng-repeat="post in vm.all">{{ post.title }}</li>
+  </ul>
+</div>
+
+/need to add a limit of 3-5 article titles

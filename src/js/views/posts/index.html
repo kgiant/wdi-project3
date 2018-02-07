@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Latest News</h2>
+  <button class="button is-small is-primary" ui-sref="postsNew" ng-if="main.isAuthenticated()">New Post</button>
+  <br>
+  <div class="row">
+    <div class="posts" ng-repeat="post in vm.all">
+      <div class="media">
+        <div class="col-4">
+          <img class="mr-3" src="{{ post.image }}" alt="image" width="320" >
+        </div>
+        <div class="col-8">
+          <h5 class="mt-0"> {{ post.title }}</h5><br>
+          <div class="media-body">
+            <em>{{ post.createdBy.name }}</em>
+            <p>{{ post.article }}</p>
+            <a ui-sref="postsShow({ id: post.id })">Read more</a>
+          </div>
+        </div>
+        <!-- add character word line limit at the article -->
+        <!-- add here ngif logedin link to edit or delete article -->
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- need to add load limit or pagination -->

@@ -1,16 +1,18 @@
 const mongoose = require('mongoose');
 
 const globalSchema = new mongoose.Schema({
-  altCap: String,
-  bitnodesCount: String,
-  btcCap: String,
-  btcPrice: String,
-  dom: String,
-  totalCap: String,
-  volumeAlt: String,
-  volumeBtc: String,
-  volumeTotal: String
+  altCap: Number,
+  bitnodesCount: Number,
+  btcCap: Number,
+  btcPrice: Number,
+  dom: Number,
+  totalCap: Number,
+  volumeAlt: Number,
+  volumeBtc: Number,
+  volumeTotal: Number
 });
+
+//take care of formating
 
 globalSchema.set('JSON', { virtuals: true});
 

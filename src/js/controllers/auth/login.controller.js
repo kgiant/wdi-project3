@@ -11,7 +11,7 @@ function LoginCtrl($auth, $state) {
   function submit() {
     $auth.login(vm.credentials)
       .then(() => {
-        $state.go('coinsIndex');
+        $state.go('home');
       });
   }
 

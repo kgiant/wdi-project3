@@ -4,8 +4,7 @@
   <base href="/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WDI Group Project</title>
-
+  <title>WDI Project 3</title>
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -15,71 +14,63 @@
   <div class="container">
     <div class="row">
       <div class="col-4">
-        <img id="logo" src="images/Screen Shot 2018-01-31 at 11.46.16 PM.png" alt="">
+        <a ui-sref="home"><img id="logo" src="images/Screen Shot 2018-01-31 at 11.46.16 PM.png"></a>
       </div>
       <div class="col-8">
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" >Hi ... {{  }}!</a>
+        <ul class="nav justify-content-end" >
+          <li class="nav-item" ng-if="main.isAuthenticated()">
+            <a class="nav-link">Hi {{ vm.user.name }}!</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
+          <li class="nav-item" ng-if="!main.isAuthenticated()">
+            <a class="nav-link" ui-sref-active="active" ui-sref="register">Register</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+          <li class="nav-item" ng-if="!main.isAuthenticated()">
+            <a class="nav-link" ui-sref-active="active" ui-sref="login">Login</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+          <li class="nav-item" ng-if="main.isAuthenticated()">
+            <a class="nav-link" href="#" ng-click="main.logout()">Logout</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <!-- <div class="container"> -->
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+      <!-- <img src="images/Screen Shot 2018-01-31 at 11.46.16 PM.png"  height="30" class="d-inline-block align-top" alt=""> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" ng-class="{ 'is-active': main.menuIsOpen}" ng-click="main.menuIsOpen = !main.menuIsOpen">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown" >
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="home">Home <span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Coins</a>
+            <a class="nav-link" ui-sref-active="active" ui-sref="coinsIndex">Coins</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Industry</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            <a class="nav-link" ui-sref-active="active" ui-sref="postsIndex">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ICO Calendar</a>
+            <a class="nav-link" ui-sref-active="active" ui-sref="industryIndex#">Industry</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Event Calendar</a>
+            <a class="nav-link" ui-sref-active="active" ui-sref="#">VC Investments</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">VC Investments</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+          <!-- <li class="nav-item">
+          <a class="nav-link" ui-sref="#">ICO Calendar</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" ui-sref="#">Event Calendar</a>
+      </li> -->
+    </ul>
   </div>
+</nav>
+<!-- </div> -->
+<div class="notification" ng-if="main.message">{{ main.message }}</div>
 
+<main ui-view>
 
-  <main ui-view>
-
-  </main>
+</main>
 </body>
 </html>

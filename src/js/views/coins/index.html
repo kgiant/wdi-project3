@@ -1,3 +1,32 @@
 <div class="container">
-  
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col"> <strong>Name</strong></th>
+          <th scope="col"> <strong>Market Cap</strong></th>
+          <th scope="col"> <strong>%24hr</strong></th>
+          <th scope="col"> <strong>Price</strong></th>
+          <th scope="col"> <strong>%24hr</strong></th>
+          <th scope="col"> <strong>24hr VWAP</strong></th>
+          <th scope="col"> <strong>Available Supply</strong></th>
+          <th scope="col"> <strong>24hr Volume</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="coin in vm.all">
+          <td>{{ }}</td>
+          <td> <a ui-sref="coinsShow({ id: coin.short })">{{ coin.long }}</a> ({{ coin.short }})</td>
+          <td>{{ coin.mktcap }}</td>
+          <td>{{ coin.cap24hrChange }}</td>
+          <td>{{ coin.price }}</td>
+          <td>{{ coin.perc  }}</td>
+          <td>{{ coin.vwapData  }}</td>
+          <td>{{ coin.supply  }}</td>
+          <td>{{ coin.volume  }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

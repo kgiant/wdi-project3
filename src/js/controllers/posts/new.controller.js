@@ -2,18 +2,28 @@ angular
   .module('coinApp')
   .controller('PostNewCtrl', PostNewCtrl);
 
-PostNewCtrl.$inject = ['$state', 'Post'];
-function PostNewCtrl($state, Post) {
+PostNewCtrl.$inject = ['$state', '$http'];
+function PostNewCtrl($state, $http) {
   const vm  = this;
   vm.post = {};
   vm.create = postCreate;
+  console.log('1');
+  // function postCreate(){
+  //   Post
+  //     .save(vm.post)
+  //     .$promise
+  //     .then(() => {
+  //       $state.go('postsIndex');
+  //     });
+  // }
 
   function postCreate(){
-    Post
-      .save(vm.post)
-      .$promise
+    $http
+      .post('/api/posts')
       .then(() => {
         $state.go('postsIndex');
+        console.log('2');
+
       });
   }
 }

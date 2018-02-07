@@ -2,19 +2,20 @@ angular
   .module('coinApp')
   .controller('CoinsIndexCtrl', CoinsIndexCtrl);
 
-CoinsIndexCtrl.$inject = ['Coin', '$http'];
-function CoinsIndexCtrl(Coin, $http) {
+CoinsIndexCtrl.$inject = ['$state', '$http'];
+function CoinsIndexCtrl($state, $http) {
   const vm = this;
-  vm.all = Coin.query();
 
   coinsIndex();
-
   function coinsIndex(){
-    $http.get('http://coincap.io/front')
+    $http
+      .get('/api/coins')
       .then((response) => {
-        vm.all = response;
 
-        console.log(response);
+        // vm.all = response.data;
+        vm.all = response.data.frontResponse;
+        vm.global = response.data.globalResponse;
+        console.log(vm.global);
       });
   }
 

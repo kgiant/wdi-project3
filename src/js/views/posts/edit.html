@@ -1,0 +1,19 @@
+<div class="container">
+  <form method="POST" ng-submit="vm.update()">
+    <!--  add here hidden method and separately ngsubmit-->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" id="title" ng-model="vm.post.title" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="image">Upload profile photo</label>
+      <input type="text" class="form-control-file" name="image" id="image" ng-model="vm.post.image">
+    </div>
+    <div class="form-group">
+      <label for="article">Article</label>
+      <textarea class="form-control" name="article" id="article" ng-model="vm.post.article" rows="10"></textarea>
+    </div>
+    <button ng-click="submit" class="btn btn-primary">Save</button>
+    <!-- change button to ngclick -->
+  </form>
+</div>

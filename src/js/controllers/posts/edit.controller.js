@@ -10,10 +10,10 @@ function PostEditCtrl($state, Post) {
 
   function postUpdate(){
     Post
-      .update($state.params, vm.post)
+      .update({id: $state.params.id}, vm.post)
       .$promise
       .then(() => {
-        $state.go('postShow', $state.params);
+        $state.go('postsShow', $state.params);
       });
   }
 }

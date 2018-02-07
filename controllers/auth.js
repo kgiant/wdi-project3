@@ -16,7 +16,7 @@ function login(req, res, next) {
       if(!user || !user.validatePassword(req.body.password)) return res.status(401).json({ message: 'Unauthorized' });
 
       const token = jwt.sign({ userId: user.id }, secret, { expiresIn: '1hr' });
-      return res.json({ token, message: `Welcome back ${user.username}` });
+      return res.json({ token, message: `Welcome back ${user.name}` });
     })
     .catch(next);
 }
@@ -24,4 +24,4 @@ function login(req, res, next) {
 module.exports = {
   register,
   login
-};
+};  
