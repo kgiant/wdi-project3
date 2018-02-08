@@ -1,25 +1,86 @@
-<!-- Angular charts -->
-<canvas id="bar" class="chart chart-bar" chart-data="vm.data" chart-labels="vm.labels" chart-series="vm.series">
-</canvas>
-<!--
-<canvas id="base" class="chart-bar"
+<div class="container" ng-controller="CoinsShowCtrl as coin">
+  <h2>{{ coin.id }}lalala</h2>
+  Ranked {{ coin.rank }}
+  <!-- does not work -->
+  <div class="row">
+    <div class="col-7">
+      <h4>Market Cap & Price</h4>
+      <canvas id="bar" class="chart chart-bar" chart-data="vm.bardata" chart-labels="vm.barlabels" chart-series="vm.barseries">
+      </canvas>
+    </div>
+    <div class="col-5">
+      <h4>Market Cap Share</h4>
+      <canvas id="pie" class="chart chart-pie" chart-data="vm.piedata" chart-labels="vm.pielabels" chart-options="options">
+      </canvas>
+    </div>
+  </div>
+  <div class="row">
+    <h4>Trading Prices</h4>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Price </th>
+          <th scope="col">Price BTC</th>
+          <th scope="col">Price ETH</th>
+          <th scope="col">Price LTC</th>
+          <th scope="col">Price ZEC</th>
+          <th scope="col">Price USD</th>
+          <th scope="col">Price EUR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="valformat">{{ coin.price | number:5}}</td>
+          <td class="valformat">{{ coin.price_btc | number:5}}</td>
+          <td class="valformat">{{ coin.price_eth | number:5}}</td>
+          <td class="valformat">{{ coin.price_ltc | number:5}}</td>
+          <td class="valformat">{{ coin.price_zec | number:5}}</td>
+          <td class="valformat">{{ coin.price_usd | currency:"$":3 }}</td>
+          <td class="valformat">{{ coin.price_eur | currency:"€":3 }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <h4>Trading Volume</h4>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Supply</th>
+          <th scope="col">Volume</th>
+          <th scope="col">Volume Alt</th>
+          <th scope="col">Volume BTC</th>
+          <th scope="col">Volume Total</th>
+          <th scope="col">VWAP 24hr</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="valformat">{{ coin.supply | number:0 }}</td>
+          <td class="valformat">{{ coin.volume | currency:"$":0 }}</td>
+          <td class="valformat">{{ coin.volumeAlt | currency:"$":0 }}</td>
+          <td class="valformat">{{ coin.volumeBtc | currency:"$":0 }}</td>
+          <td class="valformat">{{ coin.volumeTotal | currency:"$":0 }}</td>
+          <td class="valformat">{{ coin.vwap_h24 | currency:"$":0 }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+  <!-- <canvas id="base" class="chart-bar"
   chart-data="vm.data" chart-labels="vm.labels" chart-colors="colors"
   chart-dataset-override="datasetOverride" >
-</canvas>
+</canvas> -->
 
-<canvas id="base" class="chart-bubble" chart-data="vm.data"
-  chart-series="vm.series" >
-</canvas>
 
-<canvas id="base" class="chart-horizontal-bar"
-  chart-data="vm.data" chart-labels="vm.labels" >
+
+<!-- <canvas id="base" class="chart-horizontal-bar"
+chart-data="vm.data" chart-labels="vm.labels" >
 </canvas>
 
 <canvas id="line" class="chart chart-line" chart-data="vm.data"
 chart-labels="vm.labels" chart-series="vm.series" chart-options="options"
 chart-dataset-override="datasetOverride" chart-click="onClick">
-</canvas>
-
-<canvas id="pie" class="chart chart-pie"
-  chart-data="data" chart-labels="vm.labels" chart-options="options">
 </canvas> -->

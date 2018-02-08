@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-// review this for cryptocompare api
+const mongoose   = require('mongoose');
+
 const coinSchema = new mongoose.Schema({
   altCap: { type: Number },
   bitnodesCount: { type: Number },
@@ -31,12 +31,13 @@ const coinSchema = new mongoose.Schema({
   timestamps: true
 });
 
+coinSchema.set('JSON', { getters: true, virtuals: true});
+
+module.exports = mongoose.model('Coin', coinSchema);
+
+
 // Ensure that the number is saved as an integer but returned as a float
 //see example below
 // coinSchema.path('price')
 //   .get(price => (price / 100).toFixed(2))
 //   .set(price => price * 100);
-
-coinSchema.set('JSON', { getters: true, virtuals: true});
-
-module.exports = mongoose.model('Coin', coinSchema);

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose          = require('mongoose');
 
 const coinhistorySchema = new mongoose.Schema({
   market_cap: [ { date: Number,  dayCap: Number } ] ,

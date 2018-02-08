@@ -1,6 +1,5 @@
 const Post = require('../models/post');
 
-
 function indexRoute(req, res, next) {
   Post
     .find()

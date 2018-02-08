@@ -15,35 +15,6 @@ const routes          = require('./config/routes');
 const dest            = `${__dirname}/public`;
 const app             = express();
 mongoose.connect(dbURI);
-// const env        = app.get('env');
-// const { port, db }    = require('./config/environment');
-// const { port, env, dbURI, sessionSecret } = require('./config/environment'); //wdi2
-// mongoose.connect(db, env); /// db[env] change to mongoose if use old setup
-
-
-// app.use(session({
-//   secret: secret,
-//   resave: false,
-//   saveUninitialized: false
-// }));
-//
-// app.use((req, res, next) => {
-//   if (!req.session.name) return next();
-//   User
-//     .findById(req.session.name)
-//     .exec()
-//     .then((user) => {
-//       if(!user) {
-//         return req.session.regenerate(() => {
-//           res.redirect('/');
-//         });
-//       }
-//       res.locals.user = user;
-//       res.locals.isLoggedIn = true;
-//
-//       next();
-//     });
-// });
 
 app.use(methodOverride((req) => {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -66,3 +37,8 @@ app.use(errorHandler);
 
 
 app.listen(port, () => console.log(`Express is running on port: ${port}`));
+
+// const env        = app.get('env');
+// const { port, db }    = require('./config/environment');
+// const { port, env, dbURI, sessionSecret } = require('./config/environment'); //wdi2
+// mongoose.connect(db, env); /// db[env] change to mongoose if use old setup

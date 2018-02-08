@@ -1,7 +1,6 @@
 <div class="container">
   <h2>Latest News</h2>
-  <button class="button is-small is-primary" ui-sref="postsNew" ng-if="main.isAuthenticated()">New Post</button>
-  <br>
+  <a type="button" ui-sref="postsNew" ng-if="main.isAuthenticated()">Add New Post</a><br>
   <div class="row">
     <div class="posts" ng-repeat="post in vm.all">
       <div class="media">
@@ -17,12 +16,9 @@
           </div>
         </div>
         <!-- add character word line limit at the article -->
-        <!-- add here ngif logedin link to edit or delete article -->
       </div>
     </div>
-
   </div>
-
 </div>
 
-<!-- need to add load limit or pagination -->
+<!-- add load limit and pagination -->

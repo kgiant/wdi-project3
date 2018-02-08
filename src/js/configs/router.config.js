@@ -21,18 +21,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/js/views/coins/show.html',
       controller: 'CoinsShowCtrl as vm'
     })
-
-    // .state('industryIndex', {
-    //   url: '/industry',
-    //   templateUrl: '/js/views/industry/index.html',
-    //   controller: 'IndustryIndexCtrl as vm'
-    // })
-    // .state('industryShow', {
-    //   url: '/industry/:id',
-    //   templateUrl: '/js/views/industry/show.html',
-    //   controller: 'IndustryShowCtrl as vm'
-    // })
-
     .state('postsIndex', {
       url: '/posts',
       templateUrl: '/js/views/posts/index.html',
@@ -53,7 +41,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/js/views/posts/edit.html',
       controller: 'PostEditCtrl as vm'
     })
-
     .state('login', {
       url: '/login',
       templateUrl: '/js/views/auth/login.html',

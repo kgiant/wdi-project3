@@ -1,10 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose   = require('mongoose');
 
 const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
   image: { type: String, required: true }, // use filestack here
   article: { type: String, required: true },
-  // date: Date, //how do we make this automatic? timestamp?
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'} //, required: true 
 }, {
   timestamps: true

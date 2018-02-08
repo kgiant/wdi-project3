@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose      = require('mongoose');
 
-const globalSchema = new mongoose.Schema({
+const globalSchema  = new mongoose.Schema({
   altCap: Number,
   bitnodesCount: Number,
   btcCap: Number,
@@ -12,7 +12,6 @@ const globalSchema = new mongoose.Schema({
   volumeTotal: Number
 });
 
-//take care of formating
 
 globalSchema.set('JSON', { virtuals: true});
 

@@ -1,30 +1,29 @@
 <div class="container">
-  <div class="row">
-    <table class="table table-hover">
-      <thead>
+  <h2>Coin Rankings</h2>
+  <div class="row table-responsive">
+    <table class="table table-hover " >
+      <thead >
         <tr>
           <th scope="col">#</th>
           <th scope="col"> <strong>Name</strong></th>
-          <th scope="col"> <strong>Market Cap</strong></th>
-          <th scope="col"> <strong>%24hr</strong></th>
-          <th scope="col"> <strong>Price</strong></th>
-          <th scope="col"> <strong>%24hr</strong></th>
-          <th scope="col"> <strong>24hr VWAP</strong></th>
-          <th scope="col"> <strong>Available Supply</strong></th>
-          <th scope="col"> <strong>24hr Volume</strong></th>
+          <th scope="col" class="justr"> <strong>Market Cap</strong></th>
+          <th scope="col" class="justr"> <strong>Price</strong></th>
+          <th scope="col" class="justr"> <strong>%24hr</strong></th>
+          <th scope="col" class="justr"> <strong>24hr VWAP</strong></th>
+          <th scope="col" class="justr"> <strong>Available Supply</strong></th>
+          <th scope="col" class="justr"> <strong>24hr Volume</strong></th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="coin in vm.all">
-          <td>{{ }}</td>
+          <td>{{ $index + 1 }}</td>
           <td> <a ui-sref="coinsShow({ id: coin.short })">{{ coin.long }}</a> ({{ coin.short }})</td>
-          <td>{{ coin.mktcap }}</td>
-          <td>{{ coin.cap24hrChange }}</td>
-          <td>{{ coin.price }}</td>
-          <td>{{ coin.perc  }}</td>
-          <td>{{ coin.vwapData  }}</td>
-          <td>{{ coin.supply  }}</td>
-          <td>{{ coin.volume  }}</td>
+          <td class="valformat">{{ coin.mktcap | currency:"$":0 }}</td>
+          <td class="valformat">{{ coin.price | currency:"$":4 }}</td>
+          <td class="valformat">{{ coin.perc | number:2 }}</td>
+          <td class="valformat">{{ coin.vwapData | number:2 }}</td>
+          <td class="valformat">{{ coin.supply | number:0 }}</td>
+          <td class="valformat">{{ coin.volume | currency:"$":0 }}</td>
         </tr>
       </tbody>
     </table>

@@ -1,18 +1,11 @@
-const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
+const mongoose    = require('mongoose');
+mongoose.Promise  = require('bluebird');
+const env         = process.env.NODE_ENV || 'development';
+const dbURI       = process.env.MONGODB_URI || `mongodb://localhost/project3-${env}`;
+const User        = require('../models/user');
+const Posts       = require('../models/post');
 
-const env = process.env.NODE_ENV || 'development';
-const dbURI = process.env.MONGODB_URI || `mongodb://localhost/project3-${env}`;
 mongoose.connect(dbURI);
-
-// const { dbURI } = require('../config/environment');
-const User = require('../models/user');
-const Posts = require('../models/post');
-// const { env, db }    = require('../config/environment');
-// mongoose.connect(db, env);
-
-
-
 User.collection.drop();
 Posts.collection.drop();
 
@@ -22,7 +15,6 @@ User
     organization: 'myCompany',
     status: 'Admin',
     name: 'Konstantinos',
-    // image: 'https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAIA_wDGAAAAAQAAAAAAAAp5AAAAJDA1YjdkNDQ4LWEyOGItNGFmMy05OTM4LWU4MGNlZjViM2VlNw.jpg',
     email: 'kgiant@wtmnews.com',
     password: 'k',
     passwordConfirmation: 'k'
@@ -60,4 +52,7 @@ Posts
     console.log(err);
   })
   .finally(() => mongoose.connection.close());
-  
+
+// const { dbURI } = require('../config/environment');
+// const { env, db }    = require('../config/environment');
+// mongoose.connect(db, env);

@@ -1,7 +1,41 @@
 #logo {
   height: 60px;
 }
+h1  {
+  font-variant-caps: small-caps;
+  font: Raleway;
+}
 
-.row {
+h2 {
   margin-top: 15px;
+}
+.row {
+  margin-top: 5px;
+}
+
+ul.navbar-nav {
+  margin-left: 150px;
+  li {
+    margin-right: 10px;
+  }
+}
+
+a.nav-link {
+  color: grey;
+}
+
+canvas {
+  margin: 30px;
+}
+
+.posts {
+  margin-bottom: 15px;
+}
+
+th.justr {
+  text-align: right;
+}
+
+td.valformat {
+  text-align: right;
 }
