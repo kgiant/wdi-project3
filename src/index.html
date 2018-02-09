@@ -19,7 +19,7 @@
       <div class="col-8">
         <ul class="nav justify-content-end" >
           <li class="nav-item" ng-if="main.isAuthenticated()">
-            <a class="nav-link">Hi ...!</a>
+            <a class="nav-link"></a>
           </li>
           <li class="nav-item" ng-if="!main.isAuthenticated()">
             <a class="nav-link" ui-sref-active="active" ui-sref="register">Register</a>
@@ -27,27 +27,7 @@
           <li class="nav-item" ng-if="!main.isAuthenticated()">
             <a class="nav-link" ui-sref-active="active" ui-sref="login">Login</a>
           </li>
-
-          <!-- this was intended to be a drop down sign-in form so that only new users, use the views/login -->
-          <!-- <div class="dropdown show" ng-if="!main.isAuthenticated()">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
-            <form class="dropdown-menu p-4" ng-submit="vm.submit()">
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com" ng-model="vm.credentials.email">
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="vm.credentials.password">
-              </div>
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                <label class="form-check-label" for="dropdownCheck2">
-                  Remember me
-                </label>
-              </div>
-              <button type="submit" class="btn btn-primary is-fullwidth">Sign in</button>
-            </form>
-          </div> -->
-
+          <!-- here was intended to be a drop down sign-in form so that only new users, use the views/login see code at the end -->
           <li class="nav-item" ng-if="main.isAuthenticated()">
             <a class="nav-link" href="#" ng-click="main.logout()">Logout</a>
           </li>
@@ -71,26 +51,34 @@
         <li class="nav-item">
           <a class="nav-link" ui-sref-active="active" ui-sref="postsIndex">News</a>
         </li>
-        <!-- <li class="nav-item">
-        <a class="nav-link" ui-sref-active="active" ui-sref="industryIndex#">Industry</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" ui-sref-active="active" ui-sref="#">VC Investments</a>
-    </li> -->
-    <!-- <li class="nav-item">
-    <a class="nav-link" ui-sref="#">ICO Calendar</a>
-  </li>
-  <li class="nav-item">
-  <a class="nav-link" ui-sref="#">Event Calendar</a>
-</li> -->
-</ul>
-</div>
-</nav>
-<div class="notification" ng-if="main.message">{{ main.message }}</div>
-<main ui-view>
-</main>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a7c676145ec8a5b"></script>
-
+      </ul>
+    </div>
+  </nav>
+  <div class="notification" ng-if="main.message">{{ main.message }}</div>
+  <main ui-view>
+  </main>
+  <!-- this adds social media share functionality, there is a bower install too -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a7c676145ec8a5b"></script>
+  n
 </body>
 </html>
+
+
+<!-- <div class="dropdown show" ng-if="!main.isAuthenticated()">
+<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+<form class="dropdown-menu p-4" ng-submit="vm.submit()">
+<div class="form-group">
+<input type="email" class="form-control" id="email" name="email" placeholder="email@example.com" ng-model="vm.credentials.email">
+</div>
+<div class="form-group">
+<input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="vm.credentials.password">
+</div>
+<div class="form-check">
+<input type="checkbox" class="form-check-input" id="dropdownCheck2">
+<label class="form-check-label" for="dropdownCheck2">
+Remember me
+</label>
+</div>
+<button type="submit" class="btn btn-primary is-fullwidth">Sign in</button>
+</form>
+</div> -->

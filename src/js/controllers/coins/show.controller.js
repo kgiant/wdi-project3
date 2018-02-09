@@ -19,7 +19,6 @@ function CoinsShowCtrl($state, $http) {
     $http.get(`/api/coins/${$state.params.id}`)
       .then((response) => {
         // vm.coin = response.data;
-
         vm.coin = response.data.coinResponse;
         vm.history = response.data.historyResponse;
         // vm.barlabels = []; vm.coin.
@@ -27,14 +26,12 @@ function CoinsShowCtrl($state, $http) {
         // const seriesadata = vm.history.market_cap.map(market_cap() => {
         //   history.market_cap;
         // });
-
         // vm.bardata = [[],[]];
-        // const array1 =
 
         console.log(vm.mktcap);
         console.log('respone =========>', response);
-        // console.log('coin ==========> ', vm.coin);
-        // console.log('history ==========> ', vm.history);
+        // console.log('coin =======> ', vm.coin);
+        // console.log('history ======> ', vm.history);
 
         vm.pielabels = ['volumeAlt', 'volumeBtc', 'volumeTotal'];
         vm.piedata = [vm.coin.volumeAlt, vm.coin.volumeBtc, vm.coin.volumeTotal];
