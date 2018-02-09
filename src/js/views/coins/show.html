@@ -1,6 +1,6 @@
 <div class="container" ng-controller="CoinsShowCtrl as coin">
-  <h2>{{ coin.id }}lalala</h2>
-  Ranked {{ coin.rank }}
+  <h2>{{ vm.coin.id }}</h2>
+  Ranked {{ vm.coin.rank }}
   <!-- does not work -->
   <div class="row">
     <div class="col-7">
@@ -30,13 +30,13 @@
       </thead>
       <tbody>
         <tr>
-          <td class="valformat">{{ coin.price | number:5}}</td>
-          <td class="valformat">{{ coin.price_btc | number:5}}</td>
-          <td class="valformat">{{ coin.price_eth | number:5}}</td>
-          <td class="valformat">{{ coin.price_ltc | number:5}}</td>
-          <td class="valformat">{{ coin.price_zec | number:5}}</td>
-          <td class="valformat">{{ coin.price_usd | currency:"$":3 }}</td>
-          <td class="valformat">{{ coin.price_eur | currency:"€":3 }}</td>
+          <td class="valformat">{{ vm.coin.price | number:2 }}</td>
+          <td class="valformat">{{ vm.coin.price_btc | number:3 }}</td>
+          <td class="valformat">{{ vm.coin.price_eth | number:3 }}</td>
+          <td class="valformat">{{ vm.coin.price_ltc | number:3 }}</td>
+          <td class="valformat">{{ vm.coin.price_zec | number:3 }}</td>
+          <td class="valformat">{{ vm.coin.price_usd | currency:"$":2 }}</td>
+          <td class="valformat">{{ vm.coin.price_eur | currency:"€":2 }}</td>
         </tr>
       </tbody>
     </table>
@@ -56,31 +56,14 @@
       </thead>
       <tbody>
         <tr>
-          <td class="valformat">{{ coin.supply | number:0 }}</td>
-          <td class="valformat">{{ coin.volume | currency:"$":0 }}</td>
-          <td class="valformat">{{ coin.volumeAlt | currency:"$":0 }}</td>
-          <td class="valformat">{{ coin.volumeBtc | currency:"$":0 }}</td>
-          <td class="valformat">{{ coin.volumeTotal | currency:"$":0 }}</td>
-          <td class="valformat">{{ coin.vwap_h24 | currency:"$":0 }}</td>
+          <td class="valformat">{{ vm.coin.supply | number:0 }}</td>
+          <td class="valformat">{{ vm.coin.volume | currency:"$":0 }}</td>
+          <td class="valformat">{{ vm.coin.volumeAlt | currency:"$":0 }}</td>
+          <td class="valformat">{{ vm.coin.volumeBtc | currency:"$":0 }}</td>
+          <td class="valformat">{{ vm.coin.volumeTotal | currency:"$":0 }}</td>
+          <td class="valformat">{{ vm.coin.vwap_h24 | currency:"$":0 }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-
-
-  <!-- <canvas id="base" class="chart-bar"
-  chart-data="vm.data" chart-labels="vm.labels" chart-colors="colors"
-  chart-dataset-override="datasetOverride" >
-</canvas> -->
-
-
-
-<!-- <canvas id="base" class="chart-horizontal-bar"
-chart-data="vm.data" chart-labels="vm.labels" >
-</canvas>
-
-<canvas id="line" class="chart chart-line" chart-data="vm.data"
-chart-labels="vm.labels" chart-series="vm.series" chart-options="options"
-chart-dataset-override="datasetOverride" chart-click="onClick">
-</canvas> -->

@@ -19,7 +19,7 @@ function PostNewCtrl($state, $http) {
 
   function postCreate(){
     $http
-      .post('/api/posts')
+      .post('/api/posts', vm.post)
       .then(() => {
         $state.go('postsIndex');
         console.log('2');

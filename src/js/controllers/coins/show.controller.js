@@ -14,46 +14,39 @@ function CoinsShowCtrl($state, $http) {
     [28, 48, 40, 19, 86, 27, 90]
   ];
 
-  vm.pielabels = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  vm.piedata = [300, 500, 100];
-  // // vm.piedata = [vm.coin.data.volumeAlt, vm.coin.data.volumeBtc, vm.coin.data.volumeTotal];
-  // vm.piedata = [response.data.results.data.volumeAlt, response.data.results.data.volumeBtc, response.data.results.data.volumeTotal];
-
-
   coinShow();
   function coinShow(){
     $http.get(`/api/coins/${$state.params.id}`)
       .then((response) => {
-        vm.coin = response.data.results;
+        // vm.coin = response.data;
 
-        // vm.coin.price.map((element) => {
-        // })
+        vm.coin = response.data.coinResponse;
+        vm.history = response.data.historyResponse;
+        // vm.barlabels = []; vm.coin.
+        // vm.barseries = ['Market Cap', 'Price'];
+        // const seriesadata = vm.history.market_cap.map(market_cap() => {
+        //   history.market_cap;
+        // });
 
-        console.log(response);
-        console.log(vm.coin);
+        // vm.bardata = [[],[]];
+        // const array1 =
 
+        console.log(vm.mktcap);
+        console.log('respone =========>', response);
+        // console.log('coin ==========> ', vm.coin);
+        // console.log('history ==========> ', vm.history);
+
+        vm.pielabels = ['volumeAlt', 'volumeBtc', 'volumeTotal'];
+        vm.piedata = [vm.coin.volumeAlt, vm.coin.volumeBtc, vm.coin.volumeTotal];
       });
   }
-
-  // globalProxy();
-  // function globalProxy(){
-  //
-  // }
-  // vm.delete = coinsDelete;
-  //
-  // function coinsDelete(){
-  //   Coin.delete($state.params)
-  //     .$promise
-  //     .then(() => {
-  //       $state.go('coinsIndex');
-  //     });
-  // }
-
 
 }
 
 
 // import mapGeojsonExport from '../../assets/wgs84-projection-fewer-dps';
+// vm.coin.price.map((element) => {
+// })
 
 // new Date(market_cap[0].date)
 // const coinhistorySchema = new mongoose.Schema({
