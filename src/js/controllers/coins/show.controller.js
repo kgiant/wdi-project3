@@ -28,7 +28,7 @@ function CoinsShowCtrl($state, $http) {
         // });
         // vm.bardata = [[],[]];
 
-        console.log(vm.mktcap);
+        // console.log(vm.mktcap);
         console.log('respone =========>', response);
         // console.log('coin =======> ', vm.coin);
         // console.log('history ======> ', vm.history);
